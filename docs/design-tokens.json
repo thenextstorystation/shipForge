@@ -33,7 +33,6 @@
       "secondary": "#9B98B8",
       "tertiary": "#6B6888",
       "muted": "#3E3C58",
-      "inverse": "#020204",
       "plasma": "#A07EFF",
       "ember": "#FF7A5C",
       "aurora": "#6EFFDF",
@@ -47,7 +46,8 @@
       "plasma": "rgba(123,79,255,0.38)",
       "plasma-soft": "rgba(123,79,255,0.18)",
       "ember": "rgba(255,92,53,0.32)",
-      "aurora": "rgba(53,255,212,0.28)"
+      "aurora": "rgba(53,255,212,0.28)",
+      "gold": "rgba(232,201,122,0.30)"
     },
     "gradient": {
       "brand": "linear-gradient(90deg, #A07EFF 0%, #FF7A5C 52%, #6EFFDF 100%)",
@@ -56,10 +56,10 @@
       "card-hover": "linear-gradient(135deg, rgba(123,79,255,0.14) 0%, rgba(53,255,212,0.07) 100%)",
       "overlay-bottom": "linear-gradient(0deg, #020204 0%, transparent 100%)",
       "overlay-top": "linear-gradient(180deg, #020204 0%, transparent 100%)",
-      "app-1": "radial-gradient(ellipse at 50% 0%, rgba(123,79,255,0.30) 0%, transparent 70%)",
-      "app-2": "radial-gradient(ellipse at 50% 0%, rgba(255,92,53,0.28) 0%, transparent 70%)",
-      "app-3": "radial-gradient(ellipse at 50% 0%, rgba(53,255,212,0.22) 0%, transparent 70%)",
-      "app-4": "radial-gradient(ellipse at 50% 0%, rgba(232,201,122,0.25) 0%, transparent 70%)"
+      "app-plasma": "radial-gradient(ellipse at 50% 0%, rgba(123,79,255,0.30) 0%, transparent 70%)",
+      "app-ember": "radial-gradient(ellipse at 50% 0%, rgba(255,92,53,0.28) 0%, transparent 70%)",
+      "app-aurora": "radial-gradient(ellipse at 50% 0%, rgba(53,255,212,0.22) 0%, transparent 70%)",
+      "app-gold": "radial-gradient(ellipse at 50% 0%, rgba(232,201,122,0.25) 0%, transparent 70%)"
     },
     "semantic": {
       "success": "#35FFD4",
@@ -70,11 +70,6 @@
   },
   "typography": {
     "families": {
-      "display": "'Syne', 'DM Sans', system-ui, sans-serif",
-      "body": "'Inter', 'DM Sans', system-ui, sans-serif",
-      "mono": "'JetBrains Mono', 'Fira Code', 'Courier New', monospace"
-    },
-    "systemFallback": {
       "display": "system-ui, -apple-system, 'Segoe UI', sans-serif",
       "body": "system-ui, -apple-system, 'Segoe UI', sans-serif",
       "mono": "'Courier New', Courier, monospace"
@@ -116,44 +111,44 @@
     }
   },
   "spacing": {
-    "0":  "0px",
-    "px": "1px",
-    "1":  "4px",
-    "2":  "8px",
-    "3":  "12px",
-    "4":  "16px",
-    "5":  "20px",
-    "6":  "24px",
-    "7":  "28px",
-    "8":  "32px",
-    "9":  "36px",
-    "10": "40px",
-    "11": "44px",
-    "12": "48px",
-    "14": "56px",
-    "16": "64px",
-    "18": "72px",
-    "20": "80px",
-    "24": "96px",
-    "28": "112px",
-    "32": "128px",
-    "36": "144px",
-    "40": "160px",
-    "48": "192px",
-    "56": "224px",
-    "64": "256px",
-    "72": "288px",
-    "80": "320px",
-    "screen-x-sm":   "20px",
-    "screen-x-md":   "48px",
-    "screen-x-lg":   "80px",
-    "screen-x-xl":   "120px",
-    "section-gap":   "160px",
-    "section-gap-sm":"80px",
-    "card-pad-sm":   "20px",
-    "card-pad":      "32px",
-    "card-pad-lg":   "48px",
-    "nav-h":         "72px"
+    "0":   "0px",
+    "px":  "1px",
+    "1":   "4px",
+    "2":   "8px",
+    "3":   "12px",
+    "4":   "16px",
+    "5":   "20px",
+    "6":   "24px",
+    "7":   "28px",
+    "8":   "32px",
+    "9":   "36px",
+    "10":  "40px",
+    "11":  "44px",
+    "12":  "48px",
+    "14":  "56px",
+    "16":  "64px",
+    "18":  "72px",
+    "20":  "80px",
+    "24":  "96px",
+    "28":  "112px",
+    "32":  "128px",
+    "36":  "144px",
+    "40":  "160px",
+    "48":  "192px",
+    "56":  "224px",
+    "64":  "256px",
+    "72":  "288px",
+    "80":  "320px",
+    "screen-x-sm":    "20px",
+    "screen-x-md":    "48px",
+    "screen-x-lg":    "80px",
+    "screen-x-xl":    "120px",
+    "section-gap":    "160px",
+    "section-gap-sm": "80px",
+    "card-pad-sm":    "20px",
+    "card-pad":       "32px",
+    "card-pad-lg":    "48px",
+    "nav-h":          "72px"
   },
   "radius": {
     "none":    "0px",
@@ -172,56 +167,5 @@
     "icon":    "18px",
     "icon-lg": "26px",
     "icon-xl": "32px"
-  },
-  "shadows": {
-    "plasma-xs": "0 0 12px rgba(123,79,255,0.30)",
-    "plasma-sm": "0 0 24px rgba(123,79,255,0.35)",
-    "plasma-md": "0 0 48px rgba(123,79,255,0.28), 0 0 96px rgba(123,79,255,0.14)",
-    "plasma-lg": "0 0 96px rgba(123,79,255,0.32), 0 0 200px rgba(123,79,255,0.16)",
-    "ember-sm":  "0 0 24px rgba(255,92,53,0.35)",
-    "ember-md":  "0 0 48px rgba(255,92,53,0.25), 0 0 96px rgba(255,92,53,0.12)",
-    "aurora-sm": "0 0 24px rgba(53,255,212,0.30)",
-    "aurora-md": "0 0 48px rgba(53,255,212,0.22), 0 0 96px rgba(53,255,212,0.10)",
-    "card":      "0 16px 48px rgba(0,0,0,0.55), 0 4px 12px rgba(0,0,0,0.35)",
-    "card-float":"0 32px 80px rgba(0,0,0,0.65), 0 8px 24px rgba(0,0,0,0.40)"
-  },
-  "motion": {
-    "duration": {
-      "instant":   "60ms",
-      "fast":      "160ms",
-      "default":   "320ms",
-      "slow":      "550ms",
-      "cinematic": "1000ms",
-      "dramatic":  "1800ms",
-      "epic":      "2600ms"
-    },
-    "easing": {
-      "standard":   "cubic-bezier(0.16, 1, 0.3, 1)",
-      "entrance":   "cubic-bezier(0.0, 0.0, 0.2, 1)",
-      "exit":       "cubic-bezier(0.4, 0.0, 1, 1)",
-      "spring":     "cubic-bezier(0.34, 1.56, 0.64, 1)",
-      "cinematic":  "cubic-bezier(0.22, 1, 0.36, 1)",
-      "anticipate": "cubic-bezier(0.38, -0.4, 0.88, 0.65)"
-    }
-  },
-  "blur": {
-    "xs":    "4px",
-    "sm":    "8px",
-    "md":    "16px",
-    "lg":    "32px",
-    "xl":    "64px",
-    "glass": "20px",
-    "heavy": "48px"
-  },
-  "zIndex": {
-    "base":      0,
-    "raised":    10,
-    "dropdown":  40,
-    "sticky":    50,
-    "overlay":   60,
-    "modal":     70,
-    "toast":     80,
-    "cursor":    90,
-    "preloader": 100
   }
 }
