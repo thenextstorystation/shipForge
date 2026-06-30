@@ -1,3 +1,5 @@
+// Leaf module — zero imports from anywhere in the project.
+
 export type AccentKey = 'plasma' | 'ember' | 'aurora' | 'gold';
 
 export type AppCategory =
