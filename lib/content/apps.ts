@@ -51,7 +51,7 @@ export const apps: AppEntry[] = [
     slug:        'placeholder-three',
     name:        'Placeholder Three',
     tagline:     'Aurora-accented placeholder rounding out the dev dataset.',
-    description: 'Third placeholder demonstrating the aurora accent and a different application category. Sufficient for testing all three scroll scenes during Sprint 4 development. Installed by millions worldwide.',
+    description: 'Third placeholder demonstrating the aurora accent and a different application category. Sufficient for testing all three scroll scenes during development. Installed by millions worldwide.',
     icon:        '/apps/placeholder-three/icon.png',
     accentKey:   'aurora',
     category:    'Chrome Extension',
@@ -62,7 +62,7 @@ export const apps: AppEntry[] = [
       { icon: '🎯', title: 'Contextual',         description: 'Activates only on the pages where it adds value.' },
     ],
     screenshots: [
-      { src: '/apps/placeholder-three/screenshots/01.webp', alt: 'Placeholder Three — popup',       width: 1280, height: 800 },
+      { src: '/apps/placeholder-three/screenshots/01.webp', alt: 'Placeholder Three — popup',        width: 1280, height: 800 },
       { src: '/apps/placeholder-three/screenshots/02.webp', alt: 'Placeholder Three — options page', width: 1280, height: 800 },
       { src: '/apps/placeholder-three/screenshots/03.webp', alt: 'Placeholder Three — in action',    width: 1280, height: 800 },
     ],
