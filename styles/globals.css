@@ -1,0 +1,257 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   RESET
+───────────────────────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   DESIGN TOKENS
+───────────────────────────────────────────────────────────────────────────── */
+:root {
+  /* Background */
+  --void:     #020204;
+  --deep:     #07070E;
+  --surface:  #0D0D18;
+  --elevated: #121220;
+  --glass:    rgba(255,255,255,0.025);
+  --glass-s:  rgba(255,255,255,0.055);
+
+  /* Plasma */
+  --plasma:      #7B4FFF;
+  --plasma-dim:  #5C35CC;
+  --plasma-b:    #9B6FFF;
+  --plasma-glow: rgba(123,79,255,0.28);
+  --plasma-soft: rgba(123,79,255,0.12);
+
+  /* Ember */
+  --ember:      #FF5C35;
+  --ember-dim:  #CC3D20;
+  --ember-b:    #FF7A5C;
+  --ember-glow: rgba(255,92,53,0.22);
+  --ember-soft: rgba(255,92,53,0.10);
+
+  /* Aurora */
+  --aurora:      #35FFD4;
+  --aurora-dim:  #20BFA0;
+  --aurora-b:    #6EFFDF;
+  --aurora-glow: rgba(53,255,212,0.18);
+  --aurora-soft: rgba(53,255,212,0.08);
+
+  /* Gold */
+  --gold:      #E8C97A;
+  --gold-dim:  #B89A4A;
+  --gold-glow: rgba(232,201,122,0.20);
+
+  /* Text */
+  --t1:       #F0EEF8;
+  --t2:       #9B98B8;
+  --t3:       #6B6888;
+  --tm:       #3E3C58;
+  --t-plasma: #A07EFF;
+  --t-ember:  #FF7A5C;
+  --t-aurora: #6EFFDF;
+  --t-gold:   #E8C97A;
+
+  /* Borders */
+  --b-hair:     rgba(255,255,255,0.04);
+  --b-sub:      rgba(255,255,255,0.07);
+  --b-def:      rgba(255,255,255,0.11);
+  --b-str:      rgba(255,255,255,0.20);
+  --b-plasma:   rgba(123,79,255,0.38);
+  --b-plasma-s: rgba(123,79,255,0.18);
+  --b-ember:    rgba(255,92,53,0.32);
+  --b-aurora:   rgba(53,255,212,0.28);
+  --b-gold:     rgba(232,201,122,0.30);
+
+  /* Gradients (use via var() in inline styles or CSS) */
+  --grad-brand:          linear-gradient(90deg, #A07EFF 0%, #FF7A5C 52%, #6EFFDF 100%);
+  --grad-brand-diagonal: linear-gradient(135deg, #7B4FFF 0%, #FF5C35 60%, #35FFD4 100%);
+  --grad-overlay-bottom: linear-gradient(0deg, #020204 0%, transparent 100%);
+  --grad-overlay-top:    linear-gradient(180deg, #020204 0%, transparent 100%);
+  --grad-app-plasma:     radial-gradient(ellipse at 50% 0%, rgba(123,79,255,0.30) 0%, transparent 70%);
+  --grad-app-ember:      radial-gradient(ellipse at 50% 0%, rgba(255,92,53,0.28)  0%, transparent 70%);
+  --grad-app-aurora:     radial-gradient(ellipse at 50% 0%, rgba(53,255,212,0.22) 0%, transparent 70%);
+  --grad-app-gold:       radial-gradient(ellipse at 50% 0%, rgba(232,201,122,0.25) 0%, transparent 70%);
+
+  /* Typography */
+  --ff-display: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --ff-body:    system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --ff-mono:    'Courier New', Courier, monospace;
+
+  /* Radius */
+  --r-xs:      4px;
+  --r-sm:      8px;
+  --r-md:      12px;
+  --r-lg:      16px;
+  --r-xl:      24px;
+  --r-2xl:     32px;
+  --r-card:    20px;
+  --r-card-lg: 28px;
+  --r-icon:    18px;
+  --r-icon-sm: 14px;
+  --r-icon-lg: 26px;
+  --r-icon-xl: 32px;
+  --r-pill:    9999px;
+
+  /* Spacing */
+  --nav-h: 72px;
+  --pad-x: clamp(20px, 5vw, 80px);
+
+  /* Easing */
+  --ease-spring:   cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-cinema:   cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   BASE
+───────────────────────────────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background:  var(--void);
+  color:       var(--t1);
+  font-family: var(--ff-body);
+  line-height: 1.6;
+  overflow-x:  hidden;
+  -webkit-font-smoothing:  antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a      { text-decoration: none; color: inherit; }
+button { border: none; background: none; font: inherit; color: inherit; cursor: pointer; }
+img    { display: block; max-width: 100%; }
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   SCROLLBAR
+───────────────────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar       { width: 3px; }
+::-webkit-scrollbar-track { background: var(--void); }
+::-webkit-scrollbar-thumb {
+  background:    linear-gradient(180deg, var(--plasma), var(--ember));
+  border-radius: var(--r-pill);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   BACKGROUND SCENE
+───────────────────────────────────────────────────────────────────────────── */
+.bg-scene {
+  position:       fixed;
+  inset:          0;
+  z-index:        0;
+  pointer-events: none;
+  overflow:       hidden;
+}
+
+.bg-mesh {
+  position: absolute;
+  inset:    0;
+  background:
+    radial-gradient(ellipse 80% 60% at 15% 10%,  rgba(123,79,255,0.18) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 50% at 85% 25%,  rgba(255,92,53,0.12)  0%, transparent 50%),
+    radial-gradient(ellipse 70% 55% at 55% 80%,  rgba(53,255,212,0.09) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 40% at 10% 75%,  rgba(232,201,122,0.07) 0%, transparent 45%),
+    var(--void);
+}
+
+.orb {
+  position:      absolute;
+  border-radius: 50%;
+  filter:        blur(72px);
+  will-change:   transform;
+}
+.orb-1 {
+  width: 680px; height: 680px;
+  background: radial-gradient(circle, rgba(123,79,255,0.55) 0%, transparent 70%);
+  top: -200px; left: -150px;
+  animation: orbDrift1 24s ease-in-out infinite alternate;
+}
+.orb-2 {
+  width: 520px; height: 520px;
+  background: radial-gradient(circle, rgba(255,92,53,0.45) 0%, transparent 70%);
+  top: 15%; right: -120px;
+  animation: orbDrift2 19s ease-in-out infinite alternate;
+}
+.orb-3 {
+  width: 480px; height: 480px;
+  background: radial-gradient(circle, rgba(53,255,212,0.30) 0%, transparent 70%);
+  bottom: 10%; left: 20%;
+  animation: orbDrift3 27s ease-in-out infinite alternate;
+}
+.orb-4 {
+  width: 360px; height: 360px;
+  background: radial-gradient(circle, rgba(232,201,122,0.25) 0%, transparent 70%);
+  bottom: 0; right: 10%;
+  animation: orbDrift4 21s ease-in-out infinite alternate;
+}
+.orb-5 {
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(123,79,255,0.35) 0%, transparent 70%);
+  top: 50%; left: 48%;
+  animation: orbDrift1 31s ease-in-out infinite alternate;
+  animation-delay: -8s;
+}
+
+@keyframes orbDrift1 {
+  0%   { transform: translate(0, 0) scale(1); }
+  40%  { transform: translate(60px, -40px) scale(1.08); }
+  75%  { transform: translate(-30px, 55px) scale(0.94); }
+  100% { transform: translate(35px, 20px) scale(1.04); }
+}
+@keyframes orbDrift2 {
+  0%   { transform: translate(0, 0) scale(1); }
+  35%  { transform: translate(-50px, 35px) scale(1.06); }
+  70%  { transform: translate(45px, -50px) scale(0.92); }
+  100% { transform: translate(-20px, 15px) scale(1.02); }
+}
+@keyframes orbDrift3 {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(40px, -60px) scale(1.10); }
+  100% { transform: translate(-55px, 30px) scale(0.96); }
+}
+@keyframes orbDrift4 {
+  0%   { transform: translate(0, 0) scale(1); }
+  45%  { transform: translate(-35px, -25px) scale(1.05); }
+  100% { transform: translate(50px, 40px) scale(0.97); }
+}
+
+.bg-grid {
+  position: absolute;
+  inset:    0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 100%);
+}
+
+.bg-vignette {
+  position:   absolute;
+  inset:      0;
+  background: radial-gradient(ellipse 100% 100% at 50% 50%, transparent 40%, rgba(2,2,4,0.75) 100%);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   PAGE WRAPPER
+───────────────────────────────────────────────────────────────────────────── */
+.page {
+  position: relative;
+  z-index:  1;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   REDUCED MOTION
+───────────────────────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration:       0.01ms !important;
+    animation-iteration-count: 1     !important;
+    transition-duration:      0.01ms !important;
+  }
+}
