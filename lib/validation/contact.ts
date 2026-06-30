@@ -19,6 +19,8 @@ export const contactSchema = z.object({
     .min(1,    { message: 'Message is required' })
     .max(2000, { message: 'Message must be 2000 characters or fewer' }),
 
+  // Honeypot — must be empty on real submissions. Checked before this schema
+  // runs in the route handler; included here so the inferred type is complete.
   _hp: z.string().optional(),
 });
 
