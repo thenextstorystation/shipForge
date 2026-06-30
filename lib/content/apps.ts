@@ -1,0 +1,73 @@
+import type { AppEntry } from './types';
+
+export const apps: AppEntry[] = [
+  {
+    slug:        'placeholder-one',
+    name:        'Placeholder One',
+    tagline:     'A cinematic placeholder showcasing the plasma accent palette.',
+    description: 'This is a placeholder application entry used during development. It demonstrates the full AppEntry shape including all required fields. Replace with real app data before launch. Built with cutting-edge technology and obsessive attention to detail.',
+    icon:        '/apps/placeholder-one/icon.png',
+    accentKey:   'plasma',
+    category:    'Web App',
+    year:        2024,
+    features: [
+      { icon: '⚡', title: 'Blazing Fast',      description: 'Sub-100ms response times with edge-cached static assets.' },
+      { icon: '🎨', title: 'Pixel Perfect',     description: 'Every detail crafted to sub-pixel precision across all screens.' },
+      { icon: '🔐', title: 'Secure by Default', description: 'End-to-end encryption with zero plaintext data at rest.' },
+    ],
+    screenshots: [
+      { src: '/apps/placeholder-one/screenshots/01.webp', alt: 'Placeholder One — main dashboard',  width: 1280, height: 800 },
+      { src: '/apps/placeholder-one/screenshots/02.webp', alt: 'Placeholder One — feature view',    width: 1280, height: 800 },
+      { src: '/apps/placeholder-one/screenshots/03.webp', alt: 'Placeholder One — settings screen', width: 1280, height: 800 },
+    ],
+    videoUrl:        null,
+    liveUrl:         'https://example.com',
+    coverScreenshot: 0,
+  },
+  {
+    slug:        'placeholder-two',
+    name:        'Placeholder Two',
+    tagline:     'Ember-accented placeholder demonstrating the mobile category.',
+    description: 'Second placeholder entry. Uses the ember accent key and a mobile category to verify visual variety rules are respected across consecutive entries. This app changed how people interact with their devices.',
+    icon:        '/apps/placeholder-two/icon.png',
+    accentKey:   'ember',
+    category:    'Mobile — iOS',
+    year:        2023,
+    features: [
+      { icon: '📱', title: 'Native Feel',    description: 'Gesture-driven interactions that feel completely native.' },
+      { icon: '🌐', title: 'Offline First',  description: 'Full functionality with zero network connectivity required.' },
+      { icon: '📊', title: 'Rich Analytics', description: 'Actionable insights surfaced directly in the app.' },
+    ],
+    screenshots: [
+      { src: '/apps/placeholder-two/screenshots/01.webp', alt: 'Placeholder Two — onboarding',    width: 1280, height: 800 },
+      { src: '/apps/placeholder-two/screenshots/02.webp', alt: 'Placeholder Two — main view',     width: 1280, height: 800 },
+      { src: '/apps/placeholder-two/screenshots/03.webp', alt: 'Placeholder Two — detail screen', width: 1280, height: 800 },
+    ],
+    videoUrl:        null,
+    liveUrl:         'https://example.com',
+    coverScreenshot: 0,
+  },
+  {
+    slug:        'placeholder-three',
+    name:        'Placeholder Three',
+    tagline:     'Aurora-accented placeholder rounding out the dev dataset.',
+    description: 'Third placeholder demonstrating the aurora accent and a different application category. Sufficient for testing all three scroll scenes during Sprint 4 development. Installed by millions worldwide.',
+    icon:        '/apps/placeholder-three/icon.png',
+    accentKey:   'aurora',
+    category:    'Chrome Extension',
+    year:        2024,
+    features: [
+      { icon: '🔌', title: 'One-Click Install', description: 'Up and running in seconds from the Chrome Web Store.' },
+      { icon: '🧩', title: 'Modular',           description: 'Enable only the features you need — nothing else loads.' },
+      { icon: '🎯', title: 'Contextual',         description: 'Activates only on the pages where it adds value.' },
+    ],
+    screenshots: [
+      { src: '/apps/placeholder-three/screenshots/01.webp', alt: 'Placeholder Three — popup',       width: 1280, height: 800 },
+      { src: '/apps/placeholder-three/screenshots/02.webp', alt: 'Placeholder Three — options page', width: 1280, height: 800 },
+      { src: '/apps/placeholder-three/screenshots/03.webp', alt: 'Placeholder Three — in action',    width: 1280, height: 800 },
+    ],
+    videoUrl:        null,
+    liveUrl:         'https://example.com',
+    coverScreenshot: 0,
+  },
+];
