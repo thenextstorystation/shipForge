@@ -1,5 +1,5 @@
 -- lib/db/schema.sql
--- Run once against the provisioned Postgres instance.
+-- Run ONCE against the provisioned Postgres instance.
 -- Never imported by application code.
 
 CREATE EXTENSION IF NOT EXISTS "pgcrypto";
