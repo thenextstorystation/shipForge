@@ -1,3 +1,4 @@
+// Server-only. Parameterised queries only — no string interpolation into SQL.
 import type { ContactFormInput } from '@/lib/content/types';
 import { sql } from './client';
 
